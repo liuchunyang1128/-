@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文本操作</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p>{{message}}</p>
+    <p v-text="message"></p>
+    <div v-html="html"></div>
+    <div :id="box"></div>
+    <input v-model="username" type="text">
+<!--1.{{}}    文本差值
+    2.v-text  赋值给texContent
+    3.v-html  展示HTML代码
+    4.v-bind  单项数据绑定  属性绑定
+    5.v-model 双向数据绑定-->
+</div>
+<script type="application/javascript">
+    new Vue({
+        el:'#app',
+        data:{
+            message:'Hello Vue.js',
+            html:'<h1>我是一段HTML</h1>',
+            box:'box',
+            username:''
+        }
+    })
+</script>
+</body>
+</html>

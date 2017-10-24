@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<!--v-on 事件-->
+<div id="app">
+    <!--给元素绑定事件，触发相应的效果
+        监听指定元素的DOM事件，比如点击事件-->
+    <button v-on:click="zoology++">几只动物？</button>
+    <p>有{{zoology}}只动物</p>
+</div>
+
+<script type="application/javascript">
+    new Vue({
+        el:'#app',
+        data:{
+            zoology:0
+        }
+    })
+</script>
+</body>
+</html>

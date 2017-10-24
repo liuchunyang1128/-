@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<!--v-pre
+   理解：跳过{{}}的文本差值效果 以字符串的原本方法输出
+    v-once
+   理解：只渲染元素和组件一次, 这可以用优化更新性能
+    执行一次性插值指令,当改变数据时,插值处的内容不会更新
+    v-cloak
+   理解：v-cloak主要是为了解决加载页面的时候出现{{xxxx}}一闪而过的情况
+-->
+<div id="app">
+    <!--例子1-->
+<h1 v-pre>{{message}}</h1>
+    <!--例子2-->
+<h1 v-once="messagea">{{messagea}}</h1>
+    <!--例子3-->
+<h1 v-cloak>{{messageb}}</h1>
+</div>
+<script type="application/javascript">
+    new Vue({
+        el:'#app',
+        data:{
+            message:'Hello Vue.js',
+            messagea:'Hello Tomorrow',
+            messageb:'Glisten'
+        }
+    })
+</script>
+</body>
+</html>

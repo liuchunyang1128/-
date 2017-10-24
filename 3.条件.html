@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+<!--
+    v-if   if判断
+  理解：v-if 条件渲染，根据表达式的bool值进行判断是否渲染该元素
+    v-else-if
+  理解：表示多次判断，在v-if和v-else中间
+    v-else
+  理解：必须跟在v-if/v-show指令之后，不然不起作用
+       如果v-if/v-show指令的表达式为true，则else元素不显示；如果v-if/v-show指令的表达式为false，则else元素显示在页面上
+    v-show 切换标签
+  理解：与v-if类似，只是会渲染其为false的元素，而且会这添加css代码：style="display:none";
+-->
+<div id="app">
+    <!-- v-if和 v-else例子-->
+<div v-if="letter == a">
+    <div style="color: aqua">Hello</div>
+</div>
+
+<div v-else-if="letter == b">
+    <div style="color: red">Hello</div>
+</div>
+
+<div v-else-if="letter == c">
+    <div style="color: blue">Hello</div>
+</div>
+    <!--v-show例子-->
+<div v-show="height<1.75">
+    身高：{{height}}
+</div>
+</div>
+<script type="application/javascript">
+ var vm = new Vue({
+     el:'#app',
+     data:{
+         letter:'b',
+         height:1.80
+     }
+ })
+//    结果是红色的Hello
+</script>
+</body>
+</html>
